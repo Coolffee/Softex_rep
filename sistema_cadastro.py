@@ -167,7 +167,7 @@ class SistemaDeCadastro:
                     aluno.nome = input("Novo nome: ")
                     print(f"Sucesso: {ErrorCodes.SUCCESS.name}. Nome alterado com sucesso!")
                 elif opcao_a == 2:
-                    n_matricula = int(input("Nova matricula: "))
+                    n_matricula = validar_matricula()
                     if any(a.matricula == n_matricula for a in self.__alunos):
                         print(f"Erro: {ErrorCodes.MATRICULA_EXISTS.name}. A matrícula já existe!")
                     else:
@@ -179,7 +179,7 @@ class SistemaDeCadastro:
                 elif opcao_a == 4:
                     notas = []
                     while True:
-                        nota = int(input("Digite uma nota ou -1 para sair: "))
+                        nota = validar_notas()
                         if nota == -1:
                             break
                         elif nota < 0 or nota > 10:
