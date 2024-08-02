@@ -262,10 +262,15 @@ class SistemaDeCadastro:
             json.dump([aluno.to_dict() for aluno in self.__alunos], f)
 
     def carregar_alunos(self):
-        if os.path.exists(self.__filename_alunos):
-            with open(self.__filename_alunos, 'r') as f:
-                data = json.load(f)
-                self.__alunos = [Aluno(**aluno_data) for aluno_data in data]
+     if os.path.exists(self.__filename_alunos):
+        with open(self.__filename_alunos, 'r') as f:
+            data = json.load(f)
+            self.__alunos = []
+            for aluno_data in data:
+                # Remover a chave 'media' do dicionário
+                aluno_data.pop('media', None)
+                self.__alunos.append(Aluno(**aluno_data))
+
 
     def cadastrar_funcionario(self):
         while True:
