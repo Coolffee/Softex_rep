@@ -1,0 +1,26 @@
+[
+    {
+        "n_conta": 1,
+        "nome": "leo",
+        "data": "20/10/2000",
+        "senha": 1234,
+        "tipo": "corrente",
+        "saldo": 0
+    },
+    {
+        "n_conta": 2,
+        "nome": "hugo",
+        "data": "22/10/2000",
+        "senha": 4321,
+        "tipo": "corrente",
+        "saldo": 0
+    },
+    {
+        "n_conta": 3,
+        "nome": "roberto carlos",
+        "data": "23/10/2000",
+        "senha": 1234,
+        "tipo": "corrente",
+        "saldo": 0
+    }
+]
