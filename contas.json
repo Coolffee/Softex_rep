@@ -1,0 +1,16 @@
+[
+    {
+        "numero_conta": 1,
+        "nome": "leo",
+        "data_abertura": "20/10/2000",
+        "tipo_conta": "corrente",
+        "senha": 1234,
+        "saldo": 202.0,
+        "movimentacoes": [
+            "Dep\u00f3sito: R$12.0",
+            "Dep\u00f3sito: R$100.0",
+            "Dep\u00f3sito: R$94.0",
+            "Saque: R$4.0"
+        ]
+    }
+]
