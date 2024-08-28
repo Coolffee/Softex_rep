@@ -1,13 +1,12 @@
 import mysql.connector
-import datetime
 
 class BancoDeDados:
     def __init__(self, host, user, password, database):
         self.conexao = mysql.connector.connect(
-            host="localhost",
+            host=3306,
             user="root",
-            password="12345678",
-            database="alou"
+            password="4568213Mabel@!#",
+            database="banco_prova"
         )
         self.cursor = self.conexao.cursor()
 
@@ -126,18 +125,27 @@ class Banco:
             return
         nome = input("Seu nome: ")
         data_abertura = input("Data de abertura (dd/mm/aa): ")
-
-        # Converter a data para o formato YYYY-MM-DD
-        data_abertura_formatada = datetime.datetime.strptime(data_abertura, '%d/%m/%Y').strftime('%Y-%m-%d')
-
         tipo_conta = input("Tipo de conta (Poupança: p, Corrente: c): ")
         senha = int(input("Cadastre uma senha: "))
         tipo_conta = "poupanca" if tipo_conta == "p" else "corrente"
 
-        nova_conta = ContaBancaria(self.banco_dados, numero_conta, nome, data_abertura_formatada, tipo_conta, senha)
+        nova_conta = ContaBancaria(self.banco_dados, numero_conta, nome, data_abertura, tipo_conta, senha)
         self.banco_dados.inserir_conta(nova_conta)
         print("Conta cadastrada com sucesso!")
 
+    def entrar_conta(self):
+        numero_conta = int(input("Digite o número da conta: "))
+        conta_info = self.banco_dados.buscar_conta(numero_conta)
+
+        if conta_info:
+            senha = int(input("Digite a senha da conta: "))
+            if senha == conta_info[4]:  # Verifica a senha
+                conta = ContaBancaria(self.banco_dados, *conta_info)
+                self.menu_conta(conta)
+            else:
+                print("Senha inválida!")
+        else:
+            print("Número da conta não existe!")
 
     def menu_conta(self, conta):
         while True:
