@@ -74,8 +74,3 @@ O projeto está dividido em vários arquivos Python, cada um com uma responsabil
 - Uso de transações para garantir a integridade dos dados
 - Senhas armazenadas como texto simples (não é uma prática segura em ambiente de produção)
 - Suporte para diferentes tipos de conta (poupança e corrente)
-
-## Observações
-- O sistema é um exemplo educacional e não deve ser usado em produção sem melhorias significativas, especialmente em termos de segurança.
-- A implementação atual não inclui criptografia de senhas, o que seria crucial para um sistema real.
-- O código inclui boas práticas como uso de classes, separação de responsabilidades e tratamento de exceções.
