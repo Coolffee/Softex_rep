@@ -3,7 +3,7 @@ import mysql.connector
 class BancoDeDados:
     def __init__(self, host, user, password, database):
         self.conexao = mysql.connector.connect(
-            host="localhost",
+            host=3306,
             user="root",
             password="4568213Mabel@!#",
             database="banco_prova"
