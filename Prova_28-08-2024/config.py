@@ -1,4 +1,4 @@
-
+# Configurações para o acesso ao banco de dados
 
 # DB_CONFIG = {
 #    'host': 'localhost',
